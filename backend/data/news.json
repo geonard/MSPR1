@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "Mise à jour importante sur le programme",
+      "description": "Des changements importants ont été apportés au programme. Consultez les détails pour plus d'informations.",
+      "priority": "high",
+      "link": "https://www.actujoy.com/musique/hellfest/guide-ultime-pour-survivre-a-hellfest-conseils-et-astuces/"
+    },
+    {
+      "id": 2,
+      "title": "Alerte météo",
+      "description": "La météo annonce de fortes pluies pendant le festival. Préparez-vous en conséquence.",
+      "priority": "medium",
+      "link": "https://www.lachainemeteo.com/meteo-france/parc-d-attractions-750/previsions-meteo-hellfest-aujourdhui"
+    },
+    {
+      "id": 3,
+      "title": "Rappel des règles de sécurité",
+      "description": "N'oubliez pas de suivre les règles de sécurité du festival pour assurer votre sécurité et celle des autres.",
+      "priority": "low",
+      "link": "https://weezevent.com/fr/blog/reglementation-concert-plein-air/"
+    }
+  ]
+  

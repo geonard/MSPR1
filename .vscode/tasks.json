@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start Backend",
+        "type": "shell",
+        "command": "npm start",
+        "workingDirectory": "${workspaceFolder}/backend",
+        "isBackground": true,
+        "problemMatcher": ["$tsc"]
+      },
+      {
+        "label": "Start Frontend",
+        "type": "shell",
+        "command": "npm start",
+        "workingDirectory": "${workspaceFolder}/frontend",
+        "isBackground": true,
+        "problemMatcher": ["$tsc"]
+      }
+    ]
+  }
+  

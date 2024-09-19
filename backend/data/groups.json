@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Motorhead",
+        "genre": "Metal",
+        "image": "imagesGroup/Motorhead.jpg",
+        "link": "https://www.imotorhead.com/",
+        "scene": "Main Stage",
+        "time": "14:00",
+        "date": "Jour 1"
+    },
+    {
+        "id": 2,
+        "name": "Iron Maiden",
+        "genre": "Metal",
+        "image": "imagesGroup/Iron Maiden.jpg",
+        "link": "https://www.ironmaiden.com/",
+        "scene": "Main Stage",
+        "time": "16:00",
+        "date": "Jour 1"
+    },
+    {
+        "id": 3,
+        "name": "AC/DC",
+        "genre": "Rock",
+        "image": "imagesGroup/acdc.jfif",
+        "link": "https://www.acdc.com/",
+        "scene": "Rock Stage",
+        "time": "18:00",
+        "date": "Jour 1"
+    },
+    {
+        "id": 4,
+        "name": "Led Zeppelin",
+        "genre": "Rock",
+        "image": "imagesGroup/Led Zeppelin.jpg",
+        "link": "https://www.ledzeppelin.com/",
+        "scene": "Classic Rock Stage",
+        "time": "20:00",
+        "date": "Jour 2"
+    },
+    {
+        "id": 5,
+        "name": "Saxon",
+        "genre": "Rock",
+        "image": "imagesGroup/Saxon.jpg",
+        "link": "https://www.saxon747.com/",
+        "scene": "Main Stage",
+        "time": "22:00",
+        "date": "Jour 2"
+    },
+    {
+        "id": 6,
+        "name": "Black Sabbath",
+        "genre": "Rock",
+        "image": "imagesGroup/Black Sabbath.jpg",
+        "link": "https://www.blacksabbath.com/",
+        "scene": "Main Stage",
+        "time": "23:30",
+        "date": "Jour 2"
+    },
+    {
+        "id": 7,
+        "name": "Judas Priest",
+        "genre": "Rock",
+        "image": "imagesGroup/Judas Priest.jpg",
+        "link": "https://www.judaspriest.com/",
+        "scene": "Rock Stage",
+        "time": "01:00",
+        "date": "Jour 2"
+    },
+    {
+        "id": 8,
+        "name": "Queen",
+        "genre": "Rock",
+        "image": "imagesGroup/Queen.jpg",
+        "link": "https://alerterouge.com/biographie,queen,159.html",
+        "scene": "Main Stage",
+        "time": "02:30",
+        "date": "Jour 3"
+    },
+    {
+      "id": 9,
+      "name": "Oasis",
+      "genre": "Rock",
+      "image": "imagesGroup/Oasis.jpg",
+      "link": "https://www.metalorgie.com/groupe/Oasis",
+      "scene": "Rock Stage",
+      "time": "04:00",
+      "date": "Jour 3"
+    },
+    {
+      "id": 10,
+      "name": "Baby Metal",
+      "genre": "J-pop",
+      "image": "imagesGroup/BabyMetal.jfif",
+      "link": "https://www.babymetal.com/",
+      "scene": "Main Stage",
+      "time": "06:00",
+      "date": "Jour 3"
+    }
+]

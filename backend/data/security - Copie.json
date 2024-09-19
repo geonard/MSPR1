@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "message": "Alerte Météo : Tempête imminente !",
+      "link": "https://www.lachainemeteo.com/meteo-france/parc-d-attractions-750/previsions-meteo-hellfest-aujourdhui"
+    },
+    {
+      "id": 2,
+      "message": "Évacuation nécessaire dans la zone 3 !",
+      "link": "https://www.evacuationinfo.com"
+    },
+    {
+      "id": 3,
+      "message": "Interdiction de feu en raison de risques d'incendie.",
+      "link": ""
+    }
+  ]
+  

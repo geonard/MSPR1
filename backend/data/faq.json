@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "question": "Comment puis-je acheter des tickets pour les concerts ?",
+      "answer": "Vous pouvez acheter des tickets via notre site web ou à la billetterie sur place."
+    },
+    {
+      "id": 2,
+      "question": "Où se trouvent les concerts ?",
+      "answer": "Les concerts se déroulent dans diverses salles à travers la ville."
+    },
+    {
+      "id": 3,
+      "question": "Quelles sont les politiques de remboursement ?",
+      "answer": "Les remboursements sont possibles sous certaines conditions."
+    },
+    {
+      "id": 4,
+      "question": "Puis-je modifier ma réservation après l'achat ?",
+      "answer": "Les modifications de réservation peuvent être faites sous certaines conditions."
+    },
+    {
+      "id": 5,
+      "question": "Quels sont les moyens de paiement acceptés ?",
+      "answer": "Nous acceptons divers moyens de paiement, y compris les cartes de crédit."
+    },
+    {
+      "id": 6,
+      "question": "Y a-t-il des réductions pour les groupes ou les étudiants ?",
+      "answer": "Oui, nous offrons des réductions pour les groupes et les étudiants."
+    },
+    {
+      "id": 7,
+      "question": "Quels sont les horaires des concerts ?",
+      "answer": "Les horaires des concerts varient en fonction des événements."
+    },
+    {
+      "id": 8,
+      "question": "Que faire si j'ai perdu mon ticket ?",
+      "answer": "Si vous perdez votre ticket, veuillez contacter notre service client immédiatement."
+    }
+  ]
+  

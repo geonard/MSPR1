@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "message": "Alerte Météo : Tempête imminente !"
+
+    },
+    {
+      "id": 2,
+      "message": "Évacuation nécessaire dans la zone 3 !"
+
+    },
+    {
+      "id": 3,
+      "message": "Interdiction de feu en raison de risques d'incendie."
+ 
+    }
+  ]
+  
