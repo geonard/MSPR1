@@ -1,0 +1,45 @@
+// DataDisplay.js
+import React from 'react';
+import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-native';
+
+const DataDisplay = ({ data }) => {
+  return (
+    <View style={styles.container}>
+      {data.length > 0 ? (
+        data.map((item) => (
+          <View style={styles.groupRow} key={item.id}>
+            <View style={styles.groupCol}>
+              <TouchableOpacity onPress={() => Linking.openURL(item.link)}>
+                <Image source={{ uri: item.image }} style={styles.groupImage} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.groupCol}>
+              <TouchableOpacity onPress={() => Linking.openURL(item.link)}>
+                <Text style={styles.groupName}>{item.name}</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.groupCol}>
+              <Text style={styles.detailsItem}>
+                {item.scene ? `Scène: ${item.scene}` : 'Scène inconnue'}
+              </Text>
+              <Text style={styles.detailsItem}>
+                {item.time ? `Heure: ${item.time}` : 'Heure inconnue'}
+              </Text>
+              <Text style={styles.detailsItem}>
+                {item.date ? `Date: ${item.date}` : 'Date inconnue'}
+              </Text>
+            </View>
+          </View>
+        ))
+      ) : (
+        <Text style={styles.noDataText}>Aucun groupe disponible.</Text>
+      )}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  // Styles...
+});
+
+export default DataDisplay;

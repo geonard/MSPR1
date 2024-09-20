@@ -1,0 +1,16 @@
+{
+  "name": "mspr",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:web": "expo build:web"
+  },
+  "dependencies": {
+    "expo": "^48.0.0",
+    "react": "^18.0.0",
+    "react-native": "0.72.0"
+  }
+}

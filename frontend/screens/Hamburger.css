@@ -1,0 +1,64 @@
+.hamburger-menu {
+  position: fixed; /* Fixe le menu hamburger sur le côté gauche */
+  top: 0; /* Aligne le menu avec le haut de la fenêtre */
+  left: 0; /* Aligne le menu avec le côté gauche de la fenêtre */
+  height: 100vh; /* La hauteur de la slidebar couvre toute la hauteur de la fenêtre */
+  width: 250px; /* Largeur du menu hamburger */
+  background-color: #333; /* Couleur de fond du menu */
+  z-index: 1000; /* Assure que le menu est au-dessus du contenu */
+  overflow-y: auto; /* Permet de défiler le menu si nécessaire */
+  transition: transform 0.3s ease; /* Ajoute une transition pour le menu */
+  transform: translateX(-100%); /* Cache le menu en dehors de l'écran par défaut */
+  z-index: 1000; 
+}
+
+.hamburger-menu.open {
+  transform: translateX(0); /* Affiche le menu lorsque la classe 'open' est ajoutée */
+}
+
+.menu-header {
+  display: flex;
+  justify-content: center; /* Centre le logo */
+  align-items: center; /* Centre verticalement le logo */
+  padding: 10px; /* Ajoute un padding autour du logo et du bouton */
+}
+
+.logo {
+  max-height: 50px; /* Ajuste la taille du logo */
+}
+
+.hamburger-button {
+  font-size: 24px; /* Ajuste la taille du bouton hamburger */
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.menu-item {
+  padding: 10px;
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.submenu {
+  display: none; /* Cache les sous-menus par défaut */
+}
+
+.menu-item:hover .submenu {
+  display: block; /* Affiche le sous-menu lorsque l'élément de menu est survolé */
+}
+
+.submenu-item {
+  padding: 5px;
+}

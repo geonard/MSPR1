@@ -1,0 +1,17 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-1.2812, 47.0875]
+        },
+        "properties": {
+          "title": "Statue Lemmy",
+          "description": "Statue en bronze de Lemmy Kilmister, légendaire chanteur et bassiste de Motörhead."
+        }
+      }
+    ]
+  }
+  

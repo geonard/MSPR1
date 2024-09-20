@@ -1,0 +1,12 @@
+/* src/MapDetail.css */
+.map-detail {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Hauteur de la vue */
+  }
+  
+  .map-container {
+    flex: 1; /* Prend toute la place disponible après la barre de navigation */
+    padding: 10px;
+  }
+  
