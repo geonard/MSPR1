@@ -3,13 +3,11 @@ import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, Linking } 
 import SocialMedia from './SocialMedia'; 
 import NewsList from './News';
 import SecurityInfo from './SecurityInfo'; 
-import Programs from './Programs'; 
 import Faq from './Faq'; 
-import InteractiveMap from './InteractiveMap'; 
 import Partners from './Partners'; 
 import Home from './Home'; 
 import SiteMap from './SiteMap'; 
-import concertData from './data/Group.json'; // Importez votre fichier JSON ici
+ // Importez votre fichier JSON ici
 
 const Navbar = () => {
   const [showComponent, setShowComponent] = useState(''); // Gérer le composant à afficher

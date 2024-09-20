@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-const path = require('path'); // Assure-toi d'importer le module path
+const path = require('path'); 
 
 // Chemin vers le fichier JSON
 const groupsFilePath = path.join(__dirname, '../data/groups.json');

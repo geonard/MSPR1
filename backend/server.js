@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const path = require('path');
 const mongoose = require('mongoose');
 
 // Middleware
@@ -21,8 +22,8 @@ mongoose.connect('mongodb://localhost/live-events', {
 });
 
 // Importer les routes depuis le dossier routes
-const billeterieRoutes = require('./routes/billeterie');
-const artistRoutes = require('./routes/artistes');
+const billeterieRoutes = require('./routes/billeterieRoutes');
+const artistRoutes = require('./routes/artistesRoutes');
 const pointsOfInterestRoutes = require('./routes/pointsOfInterest');
 const groupRoutes = require('./routes/groupRoutes');
 const faqRoutes = require('./routes/faqRoutes');
@@ -38,6 +39,8 @@ app.use('/faq', faqRoutes);
 app.use('/groups', groupRoutes);
 app.use('/partners', partnersRoutes);
 app.use('/socialMedia', socialMediaRoutes);
+app.use('/billerie', billeterieRoutes);
+app.use('/imagesGroup', express.static(path.join(__dirname, 'data/imagesGroup')));
 
 // Middleware pour les routes de points d'intérêt
 app.use('/pointsOfInterest', (req, res, next) => {

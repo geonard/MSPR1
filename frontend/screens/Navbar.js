@@ -195,7 +195,8 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   hamburgerText: {
-    fontSize: 24,
+    fontSize: 40,
+    color: 'blue',
   },
   logo: {
     width: 100,

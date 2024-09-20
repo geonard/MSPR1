@@ -7,10 +7,8 @@ export default function SecurityInfo() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Référence pour les animations
   const animation = useRef(new Animated.Value(0)).current;
 
-  // Fonction pour récupérer les données des alertes
   const fetchNewsData = async () => {
     try {
       const response = await axios.get('http://127.0.0.1:3003/security'); // Assurez-vous que l'URL est correcte
@@ -27,9 +25,8 @@ export default function SecurityInfo() {
     fetchNewsData();
   }, []);
 
-  // Démarrer l'animation
   useEffect(() => {
-    Animated.loop(
+    const animationLoop = Animated.loop(
       Animated.sequence([
         Animated.timing(animation, {
           toValue: 1,
@@ -42,15 +39,17 @@ export default function SecurityInfo() {
           useNativeDriver: false,
         }),
       ])
-    ).start();
+    );
+    
+    animationLoop.start();
+
+    return () => animationLoop.stop(); // Arrêter l'animation lorsque le composant est démonté
   }, [animation]);
 
-  // Fonction pour gérer les pressions sur les liens
   const handleLinkPress = (link) => {
     console.log('Lien cliqué:', link);
   };
 
-  // Interpolation de la couleur basée sur l'animation
   const backgroundColor = animation.interpolate({
     inputRange: [0, 1],
     outputRange: ['#f00', '#ff0'], // Rouge à Jaune
@@ -66,7 +65,7 @@ export default function SecurityInfo() {
 
   return (
     <View style={styles.container}>
-      {newsData.map((alert, index) => (
+      {newsData.map((alert) => (
         <Animated.View
           style={[styles.alertItem, { backgroundColor }]} // Appliquer l'animation de couleur
           key={alert.id}
