@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import axios from 'axios'; // Assurez-vous d'avoir axios installé
+import axios from 'axios';
+import API_URL from './config'; // Vérifiez que le chemin est correct
 
 export default function Faq() {
   const [faqData, setFaqData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fonction pour récupérer les données de la FAQ
-  const fetchFaqData = async () => {
-    try {
-      const response = await axios.get('http://localhost:3003/faq'); // Remplacez par l'URL correcte de votre backend
-      setFaqData(response.data);
-    } catch (error) {
-      setError('Erreur lors de la récupération de la FAQ.');
-      console.error('Erreur lors de la récupération de la FAQ:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Appeler fetchFaqData lorsque le composant est monté
+  // Remplacer l'ancien code d'appel API par useEffect
   useEffect(() => {
+    const fetchFaqData = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/faq`);
+        setFaqData(response.data);
+      } catch (error) {
+        setError('Erreur lors de la récupération de la FAQ.');
+        console.error('Erreur lors de la récupération de la FAQ:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchFaqData();
   }, []);
 
@@ -48,48 +48,40 @@ export default function Faq() {
   );
 }
 
+// Ajoutez vos styles ici
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'gray',
-  },
-  scrollContainer: {
     padding: 20,
   },
+  scrollContainer: {
+    paddingBottom: 20,
+  },
   header: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    textAlign: 'center',
   },
   faqItem: {
-    marginBottom: 20,
+    marginBottom: 15,
     padding: 10,
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 5,
   },
   question: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 5,
   },
   answer: {
     fontSize: 16,
-    lineHeight: 22,
+    marginTop: 5,
   },
   loadingText: {
-    fontSize: 16,
     textAlign: 'center',
-    marginTop: 20,
+    fontSize: 18,
   },
   errorText: {
-    fontSize: 16,
     color: 'red',
     textAlign: 'center',
-    marginTop: 20,
   },
 });

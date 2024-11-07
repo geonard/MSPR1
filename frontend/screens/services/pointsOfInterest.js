@@ -1,9 +1,9 @@
 import axios from 'axios';
+import API_URL from '../config'; // Assurez-vous que le chemin est correct
 
 export const getPointsOfInterest = async () => {
   try {
-    const response = await axios.get('http://localhost:3003/pointsOfInterest');
-    // Extraire la propriété 'points_of_interest' du retour
+    const response = await axios.get(`${API_URL}/pointsOfInterest`);
     const pointsOfInterest = response.data.points_of_interest;
     return pointsOfInterest;
   } catch (error) {
@@ -12,4 +12,3 @@ export const getPointsOfInterest = async () => {
     throw error;
   }
 };
-

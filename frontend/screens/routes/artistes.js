@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // URL de base pour les appels API
-const API_URL = 'http://localhost:3003/artistes'; // Assurez-vous que l'URL correspond à celle de votre serveur backend
+const API_URL = '{API_URL}/artistes'; // Assurez-vous que l'URL correspond à celle de votre serveur backend
 
 // Récupérer tous les artistes
 export const getArtists = async () => {

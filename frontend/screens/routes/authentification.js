@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // URL de base pour les appels API
-const API_URL = 'http://localhost:3003/auth'; // Assurez-vous que l'URL correspond à celle de votre serveur backend
+const API_URL = '{API_URL}/auth'; // Assurez-vous que l'URL correspond à celle de votre serveur backend
 
 // Inscription
 export const registerUser = async (user) => {

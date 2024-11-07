@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import axios from 'axios';
+import API_URL from './config';
 
 export default function SecurityInfo() {
   const [newsData, setNewsData] = useState([]);
@@ -9,19 +10,19 @@ export default function SecurityInfo() {
 
   const animation = useRef(new Animated.Value(0)).current;
 
-  const fetchNewsData = async () => {
-    try {
-      const response = await axios.get('http://127.0.0.1:3003/security'); // Assurez-vous que l'URL est correcte
-      setNewsData(response.data);
-    } catch (error) {
-      setError('Erreur lors de la récupération de security.');
-      console.error('Erreur lors de la récupération des alertes:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const fetchNewsData = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/security`); // Utilisation des backticks ici
+        setNewsData(response.data);
+      } catch (error) {
+        setError('Erreur lors de la récupération des alertes de sécurité.');
+        console.error('Erreur lors de la récupération des alertes:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchNewsData();
   }, []);
 
@@ -31,7 +32,7 @@ export default function SecurityInfo() {
         Animated.timing(animation, {
           toValue: 1,
           duration: 1000,
-          useNativeDriver: false,
+          useNativeDriver: false, // Nécessaire pour l'animation de couleur
         }),
         Animated.timing(animation, {
           toValue: 0,
@@ -40,19 +41,20 @@ export default function SecurityInfo() {
         }),
       ])
     );
-    
+
     animationLoop.start();
 
-    return () => animationLoop.stop(); // Arrêter l'animation lorsque le composant est démonté
+    return () => animationLoop.stop();
   }, [animation]);
 
   const handleLinkPress = (link) => {
     console.log('Lien cliqué:', link);
+    // Utilisez Linking.openURL(link) pour ouvrir un navigateur si nécessaire
   };
 
   const backgroundColor = animation.interpolate({
     inputRange: [0, 1],
-    outputRange: ['#f00', '#ff0'], // Rouge à Jaune
+    outputRange: ['#f00', '#ff0'], // Animation de couleur de Rouge à Jaune
   });
 
   if (loading) {
@@ -67,7 +69,7 @@ export default function SecurityInfo() {
     <View style={styles.container}>
       {newsData.map((alert) => (
         <Animated.View
-          style={[styles.alertItem, { backgroundColor }]} // Appliquer l'animation de couleur
+          style={[styles.alertItem, { backgroundColor }]}
           key={alert.id}
         >
           <Text style={styles.alertText}>
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   alertText: {
-    fontSize: 36,
+    fontSize: 18,
   },
   alertLink: {
     color: 'blue',
@@ -104,9 +106,10 @@ const styles = StyleSheet.create({
   errorText: {
     color: 'red',
     fontSize: 16,
+    textAlign: 'center',
   },
   loadingText: {
-    fontSize: 40,
+    fontSize: 18,
     textAlign: 'center',
     marginTop: 20,
   },

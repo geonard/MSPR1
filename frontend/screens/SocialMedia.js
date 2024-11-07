@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Linking } from 'react-native';
 import axios from 'axios';
+import API_URL from './config'; // Vérifiez que le chemin est correct
 
 export default function SocialMedia() {
   const [socialMediaData, setSocialMediaData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fonction pour récupérer les données des réseaux sociaux
   const fetchSocialMediaData = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:3003/socialMedia'); // Assurez-vous que l'URL est correcte
-      console.log('Données reçues:', response.data); // Vérifiez les données reçues
+      const response = await axios.get(`${API_URL}/socialMedia`); // Utilisation correcte des backticks
+      console.log('Données reçues:', response.data);
       if (Array.isArray(response.data)) {
         setSocialMediaData(response.data);
       } else {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import axios from 'axios';
+import API_URL from './config'; // Vérifiez que le chemin est correct
 
 export default function News() {
   const [newsData, setNewsData] = useState([]);
@@ -8,19 +9,19 @@ export default function News() {
   const [error, setError] = useState(null);
 
   // Fonction pour récupérer les données des actualités
-  const fetchNewsData = async () => {
-    try {
-      const response = await axios.get('http://127.0.0.1:3003/news'); // Assurez-vous que l'URL est correcte
-      setNewsData(response.data);
-    } catch (error) {
-      setError('Erreur lors de la récupération des actualités.');
-      console.error('Erreur lors de la récupération des actualités:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const fetchNewsData = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/news`); // Utiliser des backticks pour l'interpolation
+        setNewsData(response.data);
+      } catch (error) {
+        setError('Erreur lors de la récupération des actualités.');
+        console.error('Erreur lors de la récupération des actualités:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchNewsData();
   }, []);
 
@@ -61,7 +62,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#f9f9f9',
-    height: '100px',
   },
   newsItem: {
     marginBottom: 20,

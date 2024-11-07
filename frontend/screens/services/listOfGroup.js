@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getListOfGroup = async () => {
   try {
-    const response = await axios.get('http://localhost:3003/listOfGroup');
+    const response = await axios.get('{API_URL}/listOfGroup');
     // Extraire la propriété 'points_of_interest' du retour
     const pointsOfInterest = response.data.points_of_interest;
     return pointsOfInterest;

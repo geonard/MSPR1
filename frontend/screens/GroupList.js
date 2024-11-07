@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Picker, Linking } from 'react-native';
 import axios from 'axios';
+import API_URL from './config'; // Vérifiez que le chemin est correct
 
 export default function Group() {
   const [faqData, setFaqData] = useState([]);
@@ -10,7 +11,7 @@ export default function Group() {
 
   const fetchFaqData = async () => {
     try {
-      const response = await axios.get('http://localhost:3003/groups'); // Utilise l'adresse IP correcte
+      const response = await axios.get(`${API_URL}/groups`); // Utilise l'adresse IP correcte
       setFaqData(response.data);
     } catch (error) {
       setError('Erreur lors de la récupération des groupes.');

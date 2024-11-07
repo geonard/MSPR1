@@ -1,6 +1,6 @@
 // /frontend/services/billeterieService.js
 
-const BASE_URL = 'http://localhost:3003/billeterie'; // URL de base pour l'API de billetterie
+const BASE_URL = '{API_URL}/billeterie'; // URL de base pour l'API de billetterie
 
 // Fonction pour obtenir tous les événements
 export const getAllEvents = async () => {

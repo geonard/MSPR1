@@ -11,7 +11,7 @@ const GroupList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3003/groups'); // Assurez-vous que l'URL est correcte
+        const response = await axios.get('{API_URL}/groups'); // Assurez-vous que l'URL est correcte
         setData(response.data);
       } catch (error) {
         setError('Erreur lors de la récupération des groupes.');

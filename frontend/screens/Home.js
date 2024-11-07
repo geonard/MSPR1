@@ -5,21 +5,21 @@ import SiteMap from './SiteMap';
 
 const Home = () => {
   return (
+    <>
     <ScrollView contentContainerStyle={styles.container}>
+          <>
       <View style={styles.section}>
-        <GroupList /> {/* Intégrez le composant GroupList ici */}
+        <GroupList /> {/* Intègre le composant GroupList ici */}
       </View>
 
       <View style={styles.section}>
         <Text style={styles.header}>BILLETERIE</Text>
-        {/* Intégrez la section BILLETERIE ici */}
-      </View>
-
-      <View style={styles.section}>
-        {/* Intégrez la section PLAN DU SITE ici */}
+        {/* Intègre la section PLAN DU SITE ici */}
         <SiteMap />
       </View>
+      </>
     </ScrollView>
+    </>
   );
 };
 
@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
     width: '100%',
     textAlign: 'center',
     backgroundColor: 'yellow',
+        color: 'red',               // Texte en rouge
+    textDecorationLine: 'underline', // Soulignement du texte
   },
 });
 

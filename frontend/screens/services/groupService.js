@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const getListOfGroups = async () => {
   try {
-    const response = await axios.get('http://localhost:3003/groups'); // Assure-toi que l'URL est correcte
+    const response = await axios.get('{API_URL}/groups'); // Assure-toi que l'URL est correcte
     alert('Données reçues: ' + JSON.stringify(response.data)); // Affiche les données dans une alerte
         
     return response.data;
