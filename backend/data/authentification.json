@@ -1,0 +1,9 @@
+[
+    {
+        "email": "georges.lambert19@orange.fr",
+        "name": "Geo LAMBERT",
+        "password": "$2b$10$wmJj3JSXCa9W7tIZ8x0hhOBQbx/9lTZXngAnruNSbzj3sxPj5JKHC", 
+        "role": "admin",
+        "createdAt": "2024-10-25T12:00:00Z"
+    }
+]

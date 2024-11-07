@@ -1,0 +1,6 @@
+Nom : _dmarc.geobt81.com
+Type : TXT
+Valeur : v=DMARC1; p=quarantine; 
+rua=mailto:georges.lambert18@orange.fr; 
+ruf=mailto:votre-email@example.com; 
+pct=100;

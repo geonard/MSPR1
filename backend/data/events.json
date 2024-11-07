@@ -1,0 +1,67 @@
+[
+    {
+      "id": 1,
+      "name": "Nation Sound: Heavy Metal Night",
+      "date": "2024-10-16T20:00:00Z",  
+      "location": "Stade de France",
+      "price": 50,
+      "availableTickets": 1200
+    },
+    {
+      "id": 2,
+      "name": "Nation Sound: Metallica Tribute",
+      "date": "2024-10-17T18:00:00Z", 
+      "location": "Parc des Princes",
+      "price": 35,
+      "availableTickets": 800
+    },
+    {
+      "id": 3,
+      "name": "Nation Sound: Iron Maiden Live",
+      "date": "2024-10-18T20:00:00Z",  
+      "location": "Zénith de Paris",
+      "price": 70,
+      "availableTickets": 1500
+    },
+    {
+      "id": 4,
+      "name": "Nation Sound: Night of the Living Metal",
+      "date": "2024-10-19T22:00:00Z",  
+      "location": "Palais des Congrès",
+      "price": 45,
+      "availableTickets": 1000
+    },
+    {
+      "id": 5,
+      "name": "Nation Sound: Slayer Tribute Night",
+      "date": "2024-10-20T21:00:00Z",  
+      "location": "Salle Pleyel",
+      "price": 40,
+      "availableTickets": 900
+    },
+    {
+      "id": 6,
+      "name": "Nation Sound: Black Sabbath Experience",
+      "date": "2024-10-21T19:00:00Z",  
+      "location": "Olympia",
+      "price": 60,
+      "availableTickets": 600
+    },
+    {
+      "id": 7,
+      "name": "Nation Sound: Thrash Metal Madness",
+      "date": "2024-10-22T20:00:00Z", 
+      "location": "Philharmonie de Paris",
+      "price": 55,
+      "availableTickets": 500
+    },
+    {
+      "id": 8,
+      "name": "Nation Sound: Death Metal Showdown",
+      "date": "2024-10-23T15:00:00Z",  
+      "location": "Théâtre Mogador",
+      "price": 50,
+      "availableTickets": 400
+    }
+  ]
+  

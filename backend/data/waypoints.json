@@ -25,12 +25,6 @@
       "lng": -1.2739205370730342
     },
     {
-      "title": "Statue Lemmy", 
-      "description": "Statue en bronze de Lemmy Kilmister, légendaire chanteur et bassiste de Motörhead.",
-      "lat": 47.09843399366788,
-      "lng": -1.2654756824054068
-    },
-    {
       "title": "Hellfest Steampunk Tree Monument",
       "description": "",
       "lat": 47.09740447242533,
@@ -44,6 +38,7 @@
     },
     {
       "title": "Statue Lemmy",
+      "position": "MA POSITION",
       "description": "Statue en bronze de Lemmy Kilmister, légendaire chanteur et bassiste de Motörhead.",
       "lat": 47.0875,
       "lng": -1.2812
@@ -107,6 +102,12 @@
     {
       "title": "Bar à Bières",
       "description": "Bar offrant une large sélection de bières locales et internationales.",
+      "lat": 47.096432151841874, 
+      "lng": -1.2662347032038543
+    },
+    {
+      "title": "Bar central - Météorite",
+      "description": "Le Bar central - Météorite au Hellfest s'élève comme un autel sacrificiel dédié à Bacchus lui-même..",
       "lat": 47.0950,
       "lng": -1.2790
     },
