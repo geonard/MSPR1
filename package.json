@@ -1,12 +1,13 @@
 {
-  "name": "backend",
+  "name": "mspr1",
   "version": "1.0.0",
-  "main": "server.js",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "cd backend && npm start",
+    "frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
   },
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
+
