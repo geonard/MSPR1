@@ -1,11 +1,12 @@
 services:
   - type: web
-    name: mspr1-front
+    name: mspr1-frontend  # Nom du service sur Render
     env: static
-    buildCommand: npm run build
-    startCommand: npx serve frontend/web-build
-    branch: main
-    autoDeploy: true
+    buildCommand: npm run build  # Assurez-vous que cette commande génère le dossier web-build
+    startCommand: npx serve frontend/web-build  # Sert le dossier généré
+    branch: main  # La branche à déployer
+    autoDeploy: true  # Déploiement automatique activé
     envVars:
       - key: NODE_ENV
         value: production
+
