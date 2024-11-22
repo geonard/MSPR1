@@ -1,4 +1,5 @@
 {
+  "homepage": "./",
   "name": "mspr",
   "version": "1.0.0",
   "scripts": {
@@ -13,13 +14,15 @@
     "@mapbox/mapbox-sdk": "^0.16.1",
     "@react-native-mapbox-gl/maps": "^8.1.0",
     "axios": "^1.7.7",
-    "expo": "^45.0.8",
+    "expo": "^52.0.7",
+    "expo-cli": "^4.0.17",
     "mapbox-gl": "^3.6.0",
-    "react": "^18.0.0",
-    "react-dom": "18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
     "react-native": "^0.72.17",
-    "react-native-web": "~0.18.10",
+    "react-native-web": "^0.18.12",
     "react-router-dom": "^6.26.2"
-  }
+  },
+  "proxy": "https://mspr1-back-mzxyphj6x-lambert-georges-projects.vercel.app"
 }

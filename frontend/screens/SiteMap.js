@@ -2,153 +2,88 @@ import React, { useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './SiteMap.css';
-import { getPointsOfInterest } from './services/pointsOfInterest';
-import mapboxSdk from '@mapbox/mapbox-sdk';
-import directions from '@mapbox/mapbox-sdk/services/directions';
+import API_URL from './config'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvbmFyZCIsImEiOiJjbTA0NnRzMmgwNGxnMmpyNXY0OGt5MXVjIn0.Ojuo6UTNN_g2LaE5HR2q6g';
 
-const SiteMap = ({ isFullScreen, toggleFullScreen }) => {
+const SiteMap = ({ selectedType }) => {
   const [pointsOfInterest, setPointsOfInterest] = useState([]);
-  const [map, setMap] = useState(null);
-  const [startPoint, setStartPoint] = useState(null);
-  const [endPoint, setEndPoint] = useState(null);
+  const [mapInstance, setMapInstance] = useState(null);
 
+  // Récupération et filtrage des points d'intérêt depuis l'API
   useEffect(() => {
-    const fetchPointsOfInterest = async () => {
+    const fetchPointsOfInterest = async () => {alert(selectedType);
       try {
-        const data = await getPointsOfInterest();
-        setPointsOfInterest(data);
+        const response = await fetch(`${API_URL}/pointsOfInterest`);
+        const data = await response.json();
+        const filteredPoints = (selectedType === "carte interactive"
+          ? Object.values(data).flat() // Récupère tous les points
+          : data[selectedType] || []).filter(point => 
+            typeof point.lat === 'number' && typeof point.lng === 'number'
+          );
+        
+        setPointsOfInterest(filteredPoints);
       } catch (error) {
-        console.error('Erreur lors de la récupération des points d\'intérêt:', error);
+        console.error("Erreur lors de la récupération des points d'intérêt:", error);
       }
     };
 
-    fetchPointsOfInterest();
-  }, []);
+    if (selectedType) {
+      fetchPointsOfInterest();
+    }
+  }, [selectedType]);
 
+  // Initialisation de la carte au chargement
   useEffect(() => {
-    if (pointsOfInterest.length > 0) {
-      const initializeMap = () => {
-        const mapInstance = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v11',
-          center: [-1.2785, 47.0930], // Coordonnées initiales
-          zoom: 15,
-        });
+    const initializeMap = () => {
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-1.2785, 47.0930], // Coordonnées initiales
+        zoom: 15,
+      });
 
-        mapInstance.addControl(new mapboxgl.NavigationControl());
+      // Ajout des contrôles de navigation
+      map.addControl(new mapboxgl.NavigationControl());
 
-        pointsOfInterest.forEach(point => {
-          const markerColor = point.title === 'Statue Lemmy' ? 'red' : 'blue';
+      setMapInstance(map);
+    };
 
-          const marker = new mapboxgl.Marker({ color: markerColor })
-            .setLngLat([point.lng, point.lat])
-            .addTo(mapInstance);
-
-          const popup = new mapboxgl.Popup({ offset: 25 })
-            .setHTML(`
-              <h3>${point.title}</h3>
-              ${point.title === 'Statue Lemmy' && point.position ? 
-                `<p><span style="color: red; font-size: 20px;">Position : ${point.position}</span></p>` 
-                : ''}
-              <p>${point.description || 'Aucune description disponible.'}</p>
-            `);
-
-          marker.setPopup(popup);
-        });
-
-        setMap(mapInstance);
-      };
-
+    if (!mapInstance) {
       initializeMap();
     }
-  }, [pointsOfInterest]);
+  }, [mapInstance]);
 
-  const handleCalculateRoute = () => {
-    if (!startPoint || !endPoint) {
-      alert('Veuillez sélectionner un point de départ et un point d\'arrivée.');
-      return;
-    }
+  // Ajout des marqueurs en fonction des points d'intérêt filtrés
+  useEffect(() => {
+    if (mapInstance && pointsOfInterest.length > 0) {
+      // Supprime les anciens marqueurs avant d'ajouter les nouveaux
+      const markers = pointsOfInterest.map(point => {
+        const markerColor = selectedType === 'magasins' ? 'blue' : 'green';
 
-    const mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
-    const directionsService = directions(mapboxClient);
+        const marker = new mapboxgl.Marker({ color: markerColor })
+          .setLngLat([point.lng, point.lat])
+          .addTo(mapInstance);
 
-    directionsService.getDirections({
-      profile: 'walking',
-      waypoints: [
-        { coordinates: [startPoint.lng, startPoint.lat] },
-        { coordinates: [endPoint.lng, endPoint.lat] },
-      ]
-    })
-      .send()
-      .then(response => {
-        const data = response.body;
-        if (data.routes.length > 0) {
-          const route = data.routes[0];
-          
-          if (map.getSource('route')) {
-            map.removeLayer('route');
-            map.removeSource('route');
-          }
+        const popup = new mapboxgl.Popup({ offset: 25 })
+          .setHTML(`
+            <h3>${point.title}</h3>
+            <p>${point.description || 'Aucune description disponible.'}</p>
+          `);
 
-          map.addSource('route', {
-            type: 'geojson',
-            data: {
-              type: 'Feature',
-              geometry: route.geometry,
-            }
-          });
+        marker.setPopup(popup);
 
-          map.addLayer({
-            id: 'route',
-            type: 'line',
-            source: 'route',
-            layout: {
-              'line-join': 'round',
-              'line-cap': 'round',
-            },
-            paint: {
-              'line-color': '#3887be',
-              'line-width': 5,
-            }
-          });
-        } else {
-          console.error('Aucun itinéraire trouvé.');
-        }
-      })
-      .catch(error => {
-        console.error('Erreur lors de la récupération de l\'itinéraire:', error);
+        return marker;
       });
-  };
 
-  return (
-    <div className={`map-container ${isFullScreen ? 'full-screen' : ''}`}>
-      <div className="controls">
-        <button onClick={toggleFullScreen} className="fullscreen-toggle">
-          {isFullScreen ? 'Exit Full Screen' : 'Full Screen'}
-        </button>
+      // Fonction de nettoyage pour supprimer les anciens marqueurs
+      return () => {
+        markers.forEach(marker => marker.remove());
+      };
+    }
+  }, [mapInstance, pointsOfInterest, selectedType]);
 
-        <select onChange={(e) => setStartPoint(pointsOfInterest[e.target.value])}>
-          <option value="">Sélectionnez un point de départ</option>
-          {pointsOfInterest.map((point, index) => (
-            <option key={index} value={index}>{point.title}</option>
-          ))}
-        </select>
-
-        <select onChange={(e) => setEndPoint(pointsOfInterest[e.target.value])}>
-          <option value="">Sélectionnez un point d'arrivée</option>
-          {pointsOfInterest.map((point, index) => (
-            <option key={index} value={index}>{point.title}</option>
-          ))}
-        </select>
-
-        <button onClick={handleCalculateRoute}>Calculer l'itinéraire</button>
-      </div>
-
-      <div id="map" className="map" />
-    </div>
-  );
+  return <div id="map" style={{ height: '500px', width: '1500px' }} />;
 };
 
 export default SiteMap;

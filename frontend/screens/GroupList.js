@@ -59,20 +59,27 @@ export default function Group() {
             <View style={styles.groupRow} key={item.id}>
               <View style={styles.groupCol}>
                 <TouchableOpacity onPress={() => Linking.openURL(item.link)}>
-                  <Image source={{ uri: item.image }} style={styles.groupImage} />
+                  <Image source={{ uri: `${API_URL}/${item.image}` }}style={styles.groupImage} />
                 </TouchableOpacity>
               </View>
               <View style={styles.groupCol}>
-                <TouchableOpacity onPress={() => Linking.openURL(item.link)}>
+                  {item.name ? ( // Vérifie si `item.name` est défini avant de le rendre
+                  <TouchableOpacity onPress={() => Linking.openURL(item.linkImage)}>
                   <Text style={styles.groupName}>{item.name}</Text>
-                </TouchableOpacity>
+                  </TouchableOpacity>
+                  ) : (
+                  <Text style={styles.groupName}>Nom non disponible</Text> // Message par défaut si `item.name` est manquant
+                   )}
               </View>
               <View style={styles.groupCol}>
                 <Text style={styles.detailsItem}>
                   {item.scene ? `Scène: ${item.scene}` : 'Scène inconnue'}
                 </Text>
                 <Text style={styles.detailsItem}>
-                  {item.time ? `Heure: ${item.time}` : 'Heure inconnue'}
+                  {item.start ? `Heure: ${item.start}` : 'Heure inconnue'}
+                </Text>
+                <Text style={styles.detailsItem}>
+                  {item.end ? `Heure: ${item.end}` : 'Heure inconnue'}
                 </Text>
                 <Text style={styles.detailsItem}>
                   {item.date ? `Date: ${item.date}` : 'Date inconnue'}
@@ -129,12 +136,14 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   groupName: {
-    fontSize: 18,
+    fontSize: 23,
     color: '#007BFF',
+    fontfamily: 'Arrial',
   },
   detailsItem: {
-    fontSize: 14,
+    fontSize: 20,
     color: '#333',
+    fontfamily: 'Arrial',
   },
   noDataText: {
     fontSize: 16,

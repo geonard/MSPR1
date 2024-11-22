@@ -11,7 +11,7 @@ export default function Faq() {
   // Remplacer l'ancien code d'appel API par useEffect
   useEffect(() => {
     const fetchFaqData = async () => {
-      try {
+      try {SpeechRecognitionAlternative(process.env.REACT_APP_API_URL);
         const response = await axios.get(`${API_URL}/faq`);
         setFaqData(response.data);
       } catch (error) {

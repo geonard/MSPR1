@@ -1,17 +1,19 @@
-// App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './screens/Navbar'; // Assurez-vous que le chemin est correct
-import Home from './screens/Home'; // Assurez-vous que le chemin est correct
-import Faq from './screens/Faq'; // Assurez-vous que le chemin est correct
+import React, { useState } from 'react';
+import Navbar from './screens//Navbar';
+import SiteMap from './screens/SiteMap';
 
 const App = () => {
+  const [selectedType, setSelectedType] = useState(null);
+
+  const handleTypeSelect = (type) => {
+    setSelectedType(type); // Met à jour le type sélectionné
+  };
+
   return (
-    <Router>
-      <div>
-        <Navbar /> {/* Barre de navigation */}
-      </div>
-    </Router>
+    <div>
+      <Navbar onTypeSelect={handleTypeSelect} />
+      {selectedType && <SiteMap selectedType={selectedType} />} {/* Passe le type comme prop */}
+    </div>
   );
 };
 

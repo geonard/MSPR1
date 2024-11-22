@@ -1,0 +1,227 @@
+{
+  "points_of_interest": [
+    {
+      "title": "Hellfest Steampunk Clock",
+      "description": "",
+      "lat": 47.097490290808054,
+      "lng": -1.2660241133442103
+    },
+    {
+      "title": "Warzone Stage",
+      "description": "",
+      "lat": 47.09851279713055,
+      "lng": -1.2645220763523983
+    },
+    {
+      "title": "Hellfest - Organisation Check-in",
+      "description": "Billeterie",
+      "lat": 47.100090339894095,
+      "lng": -1.2832760814469757
+    },
+    {
+      "title": "Camping Hellfest",
+      "description": "Joli petit camping de caractère, bien sous tout rapport.",
+      "lat": 47.102325111993366,
+      "lng": -1.2739205370730342
+    },
+    {
+      "title": "Hellfest Steampunk Tree Monument",
+      "description": "",
+      "lat": 47.09740447242533,
+      "lng": -1.2673498932170841
+    },
+    {
+      "title": "Hellfest Steampunk Horn Hand Sign",
+      "description": "",
+      "lat": 47.097608975586326,
+      "lng": -1.2683369460990328
+    },
+    {
+      "title": "Statue Lemmy",
+      "position": "MA POSITION",
+      "description": "Statue en bronze de Lemmy Kilmister, légendaire chanteur et bassiste de Motörhead.",
+      "lat": 47.0875,
+      "lng": -1.2812
+    },
+    {
+      "title": "Statue Ronnie James Dio",
+      "description": "Statue en bronze de Ronnie James Dio, une icône du heavy metal.",
+      "lat": 47.0890,
+      "lng": -1.2830
+    },
+    {
+      "title": "Temple du Metal",
+      "description": "Zone décorée avec des sculptures et des éléments artistiques inspirés du metal.",
+      "lat": 47.0900,
+      "lng": -1.2800
+    },
+    {
+      "title": "Totems Artistiques",
+      "description": "Sculptures et totems inspirés par la musique metal et la fantasy.",
+      "lat": 47.0910,
+      "lng": -1.2790
+    },
+    {
+      "title": "Scène Temple",
+      "description": "Scène principale décorée avec des éléments architecturaux imposants.",
+      "lat": 47.0920,
+      "lng": -1.2780
+    },
+    {
+      "title": "Espaces Thématiques",
+      "description": "Zones dédiées à des groupes ou thèmes spécifiques avec des décorations artistiques.",
+      "lat": 47.0930,
+      "lng": -1.2770
+    },
+    {
+      "title": "Installations Fan Art",
+      "description": "Installations créées par des fans ou artistes en hommage à des groupes célèbres.",
+      "lat": 47.0940,
+      "lng": -1.2760
+    },
+    {
+      "title": "Mur des Souvenirs",
+      "description": "Espace pour les messages ou souvenirs des fans, décoré avec des éléments artistiques.",
+      "lat": 47.0950,
+      "lng": -1.2750
+    }
+  ],
+  "restaurations": [
+    {
+      "title": "Food Truck Mexicain",
+      "description": "Food truck proposant des tacos, burritos, et nachos.",
+      "lat": 47.0932,
+      "lng": -1.2778
+    },
+    {
+      "title": "Stand Burgers",
+      "description": "Stand de burgers avec des options pour tous les goûts.",
+      "lat": 47.0940,
+      "lng": -1.2782
+    },    {
+      "title": "Restauration Végétarienne",
+      "description": "Options de repas végétariens et végétaliens.",
+      "lat": 47.0965,
+      "lng": -1.2785
+    },
+    {
+      "title": "Pizza et Frites",
+      "description": "Stand proposant des pizzas cuites au four et des frites.",
+      "lat": 47.0960,
+      "lng": -1.2800
+    },
+    {
+      "title": "Restauration Végétarienne",
+      "description": "Options de repas végétariens et végétaliens.",
+      "lat": 47.0965,
+      "lng": -1.2785
+    }
+  ],
+    "bars": [
+    {
+      "title": "Bar à Bières",
+      "description": "Bar offrant une large sélection de bières locales et internationales.",
+      "lat": 47.096432151841874, 
+      "lng": -1.2662347032038543
+    },
+    {
+      "title": "Bar central - Météorite",
+      "description": "Le Bar central - Météorite au Hellfest s'élève comme un autel sacrificiel dédié à Bacchus lui-même..",
+      "lat": 47.0950,
+      "lng": -1.2790
+    },
+    {
+      "title": "Café et Snacks",
+      "description": "Café avec des snacks sucrés et salés.",
+      "lat": 47.0970,
+      "lng": -1.2770
+    }
+  ],
+  "wc": [
+    {
+      "title": "WC Principal",
+      "description": "Sanitaires principaux situés au centre du site.",
+      "lat": 47.0925,
+      "lng": -1.2795
+    },
+    {
+      "title": "WC Sud",
+      "description": "Sanitaires situés dans la zone sud du site.",
+      "lat": 47.0945,
+      "lng": -1.2770
+    },
+    {
+      "title": "WC Nord",
+      "description": "Sanitaires situés dans la zone nord du site.",
+      "lat": 47.0960,
+      "lng": -1.2755
+    }
+  ],
+  "borne_internet": [
+    {
+      "title": "Borne Internet Centrale",
+      "description": "Borne Internet centrale pour les connexions et l'accès aux informations.",
+      "lat": 47.0930,
+      "lng": -1.2785
+    },
+    {
+      "title": "Borne Internet Sud",
+      "description": "Borne Internet située dans la zone sud du site.",
+      "lat": 47.0940,
+      "lng": -1.2790
+    }
+  ],
+  "magasins": [
+    {
+      "title": "Boutique Merchandising",
+      "description": "Boutique proposant des produits dérivés du festival et des groupes.",
+      "lat": 47.0915,
+      "lng": -1.2805
+    },
+    {
+      "title": "Magasin de Disques",
+      "description": "Magasin de vinyles et de CD de groupes présents au festival.",
+      "lat": 47.0920,
+      "lng": -1.2790
+    }
+  ],
+  "scènes": [
+    {
+      "title": "Main Stage",
+      "description": "Scène 1",
+      "lat": 47.095605862156184, 
+      "lng": -1.2663409166646247
+    },
+    {
+      "title": "Warzone Stage",
+      "description": "Scène 2",
+      "lat": 47.098545870436794, 
+      "lng": -1.2647809880015697
+    },
+    {
+      "title": "Valley Stage",
+      "description": "Scène 3",
+      "lat": 47.09943144521983, 
+      "lng": -1.2666980266225585
+    },
+    {
+      "title": "Hell Stage",
+      "description": "Scène 4",
+      "lat": 47.0920,
+      "lng": -1.2790
+    },
+    {
+      "title": "Main Stage 2",
+      "description": "Scène 5",
+      "lat": 47.095579011327914, 
+      "lng": -1.2658172134928303
+    }
+  ],
+    "hellfest_area": [
+    [47.095, -1.290], 
+    [47.090, -1.275], 
+    [47.095, -1.270], 
+    [47.100, -1.280], 
+    [47.095, -1.290]   
+  ]
+}

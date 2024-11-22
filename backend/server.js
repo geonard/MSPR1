@@ -8,6 +8,11 @@ const config = require('./config');
 
 // Middleware
 app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', // Ou l'URL de votre frontend déployé
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
+
 app.use(express.json());
 
 const port = config.PORT; // Utiliser la variable globale
@@ -26,10 +31,11 @@ mongoose.connect('mongodb://localhost/live-events', {
 // Importer les routes depuis le dossier routes
 const authentificationRoutes = require('./routes/authentificationRoutes');
 const billeterieRoutes = require('./routes/billeterieRoutes');
-const pointsOfInterestRoutes = require('./routes/pointsOfInterest');
+const pointsOfInterestRoutes = require('./routes/pointsOfInterestRoutes');
+const pointsMagasinsRoutes = require('./routes/pointsMagasinsRoutes');
 const groupRoutes = require('./routes/groupRoutes');
 const faqRoutes = require('./routes/faqRoutes');
-const programsRoutes = require('./routes/programsRoutes');
+const programsRoutes = require('./routes/programsRoutes'); 
 const newsRoutes = require('./routes/newsRoutes');
 const securityRoutes = require('./routes/securityRoutes');
 const partnersRoutes = require('./routes/partnersRoutes');
@@ -55,6 +61,12 @@ app.use('/pointsOfInterest', (req, res, next) => {
   res.locals.message = 'Bienvenue sur la route des points d\'intérêt'; // Stocker un message dans res.locals
   next(); // Passer au prochain middleware ou route
 }, pointsOfInterestRoutes);
+
+app.use('/pointsMagasins', (req, res, next) => {
+  console.log('Requête reçue sur /pointsMagasins');
+  res.locals.message = 'Bienvenue sur la route des points d\'intérêt'; // Stocker un message dans res.locals
+  next(); // Passer au prochain middleware ou route
+}, pointsMagasinsRoutes);
 
 // Route par défaut
 app.get('/', (req, res) => {

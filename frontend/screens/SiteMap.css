@@ -19,7 +19,8 @@
   position: relative;
 }
 
-.map {
-  width: 100%;  /* S'assure que la carte occupe toute la largeur */
-  height: 100%; /* S'assure que la carte occupe toute la hauteur */
+#map {
+  width: 100vw; /* Prend toute la largeur de l'écran */
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  position: relative; /* Assure que le conteneur occupe l'espace complet */
 }
