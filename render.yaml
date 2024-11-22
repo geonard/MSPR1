@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mspr1-frontend
+    env: static
+    buildCommand: npm install
+    startCommand: npx serve frontend/web-build
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
