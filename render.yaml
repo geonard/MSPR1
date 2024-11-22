@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: mspr1
+    name: mspr1-front
     env: static
     buildCommand: npm run build
     startCommand: npx serve frontend/web-build
